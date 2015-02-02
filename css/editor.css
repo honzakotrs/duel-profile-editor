@@ -1,0 +1,143 @@
+body, input {
+    font-family: "Courier New";
+}
+
+#log {
+    margin: 20px 0px 10px 0px;
+    padding: 10px;
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    font-family: "Courier New";
+    font-size: 12px;
+    clear: both;
+    white-space: pre;
+}
+#skin-preview {
+    position: relative;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    padding: 5px;
+}
+#skin-preview table {
+    clear: both;
+    background-color: transparent;
+}
+#skin-preview table tr td {
+    height: 5px;
+    width: 5px;
+    background-color: transparent;
+}
+
+#skin-mini-preview {
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#skin-mini-preview table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#skin-mini-preview table tr td {
+    height: 1px;
+    width: 1px;
+}
+
+#skin-preview-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#skin-preview-background div {
+    min-height: 20px;
+    width: 20px;
+    cursor: pointer;
+    margin: 5px;
+    border: 1px solid #EEEEEE;
+}
+#skin-preview-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#skin-preview-actions div {
+    min-height: 34px;
+    width: 34px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#skin-colors table {
+    font-size: 12px;
+}
+
+#skin-colors table tr:first-of-type {
+    text-align: right;
+}
+
+#skin-colors input[type="color"] {
+    background: none;
+    padding: 0;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bg-light {
+    background-color: #999999;
+}
+.bg-dark {
+    background-color: #000000;
+}
+.bg-white {
+    background-color: #FFFFFF;
+}
+
+.column {
+    border: 1px solid #CCCCCC;
+    padding: 0px;
+    float: left;
+    margin: 0px 15px 15px 0px;
+}
+
+.column h3 {
+    margin: 0px 0px 0px 0px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.column input {
+    margin: 5px;
+}
+
+#skin-controls {
+    text-align: center;
+}
+
+.skin-control {
+    padding: 7px 10px;
+    margin: 7px 3px;
+    text-align: center;
+    background-color: #EEE;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+    border: 1px solid #CCC;
+    display: inline-block;
+    width: 35%;
+    cursor: pointer;
+}
+
+.skin-control:hover {
+    background-color: #DDD;
+}
+
+#skin-file {
+    display: none;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Duel Profile Editor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/editor.css">
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/knockout-3.2.0.js"></script>
+        <script src="js/knockout.mapping-latest.js"></script>
+        <script src="js/palette.js"></script>
+        <script src="js/editor.js"></script>
+
+    </head>
+
+    <body>
+
+        <h1>Duel Profile Editor (v.<span data-bind="text: version"></span>)</h1>
+
+        <div>
+            <div class="column">
+                <h3>Skin</h3>
+
+                <div id="skin-controls">
+                    <label class="skin-control">
+                        <input id="skin-file" type="file" data-bind="event: { change: function() { loadSkin($element.files[0]) } }" />
+                        Load
+                    </label>
+                    <a class="skin-control" href="#" data-bind="attr: { href: skinData() }" download="skin.json" target="_blank">Save</a>
+                </div>
+
+                <div id="skin-preview" data-bind="style: { 'backgroundColor': previewBackground }">
+                    <div id="skin-preview-background">
+                        <div class="bg-dark" data-bind="click: darkBackground"></div>
+                        <div class="bg-light" data-bind="click: lightBackground"></div>
+                        <div class="bg-white" data-bind="click: whiteBackground"></div>
+                    </div>
+
+                    <div id="skin-preview-actions">
+                        <div data-bind="click: randomizeColors"><img src="img/dice.svg" width="32"/></div>
+                    </div>
+
+                    <div id="skin-mini-preview" data-bind="style: { 'backgroundColor': previewBackground }">
+                        <table data-bind="foreach: { data: miniMan, as: 'row' }">
+                            <tr data-bind="foreach: { data: row }">
+                                <td data-bind="skinColor: $data"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <table data-bind="foreach: { data: man, as: 'row' }">
+                        <tr data-bind="foreach: { data: row }">
+                            <td data-bind="skinColor: $data"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="skin-colors">
+                    <table data-bind="foreach: skinColors">
+                        <tr>
+                            <th data-bind="text: name"></th>
+                            <td><input type="color" data-bind="value: color" /></td>
+                            <td><input type="text" maxlength="7" data-bind="value: color" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+
+
+            </div>
+
+            <div class="column">
+                <h3>Sounds (coming soon)</h3>
+                <input disabled id="sounds-file" type="file" data-bind="event: { change: function() { loadSounds($element.files[0]) } }" />
+            </div>
+        </div>
+
+    <div id="log"></div>
+
+    </body>
+</html>
